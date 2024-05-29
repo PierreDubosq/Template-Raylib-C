@@ -9,12 +9,14 @@
 
 int main(void)
 {
+  InitWindow(800, 600, "Raylib");
+
   const char *text = "Congrats! You created your first window!";
   const int textWidth = MeasureText(text, 20);
   const int posX = (GetScreenWidth() - textWidth) / 2;
   const int posY = GetScreenHeight() / 2;
 
-  InitWindow(800, 600, "Raylib");
+  SetTargetFPS(60);
 
   while (!WindowShouldClose())
   {
