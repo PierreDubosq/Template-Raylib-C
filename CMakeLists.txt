@@ -10,7 +10,8 @@ FetchContent_Declare(RAYLIB
     GIT_TAG 5.0)
 FetchContent_MakeAvailable(RAYLIB)
 
-add_executable(binary sources/main.c)
+file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS sources/*.c)
+add_executable(pokemon_mutation ${SOURCES})
 target_include_directories(binary PRIVATE includes)
 target_link_libraries(binary PRIVATE raylib)
 target_compile_features(binary PRIVATE c_std_99)
